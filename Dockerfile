@@ -22,4 +22,4 @@ ENV LAUNCH_JBOSS_IN_BACKGROUND true
 EXPOSE 8080 9990
 
 # Set the default command to run on boot
-ENTRYPOINT ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
