@@ -5,7 +5,6 @@ MAINTAINER Aleksey Nikitin <kvandake@gmail.com>
 # Set the WILDFLY_VERSION env variable
 ENV WILDFLY_VERSION 10.0.0.Final
 ENV WILDFLY_SHA1 c0dd7552c5207b0d116a9c25eb94d10b4f375549
-ENV WILDFLY_HOME /opt/wildfly
 
 # Add the WildFly distribution to /opt
 RUN cd $HOME \
@@ -13,7 +12,7 @@ RUN cd $HOME \
     && sha1sum wildfly-$WILDFLY_VERSION.tar.gz | grep $WILDFLY_SHA1 \
     && tar xz -f wildfly-$WILDFLY_VERSION.tar.gz \
     && mkdir -p /opt \
-    && mv $HOME/wildfly-$WILDFLY_VERSION $WILDFLY_HOME \
+    && mv $HOME/wildfly-$WILDFLY_VERSION /opt/wildfly \
     && rm wildfly-$WILDFLY_VERSION.tar.gz
 
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
