@@ -3,13 +3,11 @@ FROM frolvlad/alpine-oraclejdk8:latest
 MAINTAINER Aleksey Nikitin <kvandake@gmail.com>
 
 # Set the WILDFLY_VERSION env variable
-ENV WILDFLY_VERSION 9.0.2.Final
-ENV WILDFLY_SHA1 75738379f726c865d41e544e9b61f7b27d2853c7
+ENV WILDFLY_VERSION 9.0.0.Final
 
 # Add the WildFly distribution to /opt
 RUN cd $HOME \
 	&& wget http://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-$WILDFLY_VERSION.tar.gz \
-    && sha1sum wildfly-$WILDFLY_VERSION.tar.gz | grep $WILDFLY_SHA1 \
     && tar xz -f wildfly-$WILDFLY_VERSION.tar.gz \
     && mkdir -p /opt \
     && mv $HOME/wildfly-$WILDFLY_VERSION /opt/wildfly \
