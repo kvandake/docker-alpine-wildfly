@@ -3,8 +3,8 @@ FROM frolvlad/alpine-oraclejdk8:latest
 MAINTAINER Aleksey Nikitin <kvandake@gmail.com>
 
 # Set the WILDFLY_VERSION env variable
-ENV WILDFLY_VERSION 10.0.0.Final
-ENV WILDFLY_SHA1 c0dd7552c5207b0d116a9c25eb94d10b4f375549
+ENV WILDFLY_VERSION 9.0.2.Final
+ENV WILDFLY_SHA1 75738379f726c865d41e544e9b61f7b27d2853c7
 
 # Add the WildFly distribution to /opt
 RUN cd $HOME \
